@@ -44,13 +44,13 @@ namespace Tamagotchi.Controllers
     public ActionResult Feed(int id)
     {
       Pet fedPet = Pet.Find(id);
-      fedPet.ChangeFood(2);
+      fedPet.ChangeFood(3);
       List<Pet> petsList = Pet.GetAll();
       foreach(Pet pet in petsList)
       {
-        pet.ChangeFood(-1);
+
         pet.ChangeAttention(-1);
-        pet.ChangeRest(-1);
+        pet.ChangeRest(-2);
       }
     return RedirectToAction("Index");
     }
@@ -59,13 +59,12 @@ namespace Tamagotchi.Controllers
     public ActionResult Play(int id)
     {
       Pet fedPet = Pet.Find(id);
-      fedPet.ChangeAttention(2);
+      fedPet.ChangeAttention(3);
       List<Pet> petsList = Pet.GetAll();
       foreach(Pet pet in petsList)
       {
-        pet.ChangeFood(-1);
-        pet.ChangeAttention(-1);
-        pet.ChangeRest(-1);
+        pet.ChangeFood(-2);
+        pet.ChangeRest(-2);
       }
     return RedirectToAction("Index");
     }
@@ -74,13 +73,12 @@ namespace Tamagotchi.Controllers
     public ActionResult Sleep(int id)
     {
       Pet fedPet = Pet.Find(id);
-      fedPet.ChangeRest(2);
+      fedPet.ChangeRest(3);
       List<Pet> petsList = Pet.GetAll();
       foreach(Pet pet in petsList)
       {
         pet.ChangeFood(-1);
         pet.ChangeAttention(-1);
-        pet.ChangeRest(-1);
       }
     return RedirectToAction("Index");
     }
