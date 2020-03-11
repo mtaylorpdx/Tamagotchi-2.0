@@ -10,9 +10,9 @@
     <div class="container text-center">
       <h1>Your Menagerie</h1>
       <hr>
-      @foreach(Pet pet in ModelExpressionProvider)
+      @foreach(Pet pet in Model)
       {
-        <p>@pet.petName</p>
+        <p>@pet.Name - Food: @pet.Food - Attention: @pet.Attention - Rest: @pet.Rest</p>
       }
       <hr>
       <form action="/pets" method="post">
