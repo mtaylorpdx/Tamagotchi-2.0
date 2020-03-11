@@ -12,17 +12,31 @@
       <hr>
       @foreach(Pet pet in Model)
       {
-        <p>@pet.Name - Food: @pet.Food - Attention: @pet.Attention - Rest: @pet.Rest</p>
-        <form action="/feed/@pet.Id" method="post">
-          <button type="submit">Feed</button>
-        </form>
-        <form action="/play/@pet.Id" method="post">
-          <button type="submit">Play</button>
-        </form>
-        <form action="/sleep/@pet.Id" method="post">
-          <button type="submit">Sleep</button>
-        </form>
-        <hr>
+        <div class="row">
+          <p>@pet.Name - Food: @pet.Food - Attention: @pet.Attention - Rest: @pet.Rest</p>
+          <div class="col-md-3">
+
+          </div>
+          <div class="col-md-2">
+            <form action="/feed/@pet.Id" method="post">
+              <button type="submit">Feed</button>
+            </form>
+          </div>
+          <div class="col-md-2">
+            <form action="/play/@pet.Id" method="post">
+              <button type="submit">Play</button>
+            </form>
+          </div>
+          <div class="col-md-2">
+            <form action="/sleep/@pet.Id" method="post">
+              <button type="submit">Sleep</button>
+            </form>
+          </div>
+          <div class="col-md-3">
+            
+          </div>
+          <hr>
+        </div>
       }
       <hr>
       <form action="/pets" method="post">
