@@ -32,5 +32,18 @@ namespace Tamagotchi.Models
     {
       return _instances[searchId-1];
     }
+    
+    public void ChangeFood(int food)
+    {
+      Food += food;
+    }
+    public void ChangeAttention(int attention)
+    {
+      Attention += attention;
+    }
+    public void ChangeRest(int rest)
+    {
+      Rest += rest;
+    }
   }
 }

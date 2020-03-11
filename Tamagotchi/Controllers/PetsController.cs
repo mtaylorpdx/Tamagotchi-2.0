@@ -40,13 +40,17 @@ namespace Tamagotchi.Controllers
       return View();
     }
 
-    [HttpPost("/feed")]
-    public ActionResult PassTime()
+    [HttpPost("/feed/{id}")]
+    public ActionResult Feed(int id)
     {
+      Pet fedPet = Pet.Find(id);
+      fedPet.ChangeFood(2);
       List<Pet> petsList = Pet.GetAll();
       foreach(Pet pet in petsList)
       {
-        pet.Food -= 1;
+        pet.ChangeFood(-1);
+        pet.ChangeAttention(-1);
+        pet.ChangeRest(-1);
       }
     return RedirectToAction("Index");
     }

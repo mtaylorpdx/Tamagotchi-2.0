@@ -13,11 +13,12 @@
       @foreach(Pet pet in Model)
       {
         <p>@pet.Name - Food: @pet.Food - Attention: @pet.Attention - Rest: @pet.Rest</p>
+        <form action="/feed/@pet.Id" method="post">
+          <button type="submit">Feed!</button>
+        </form>
+        <hr>
       }
       <hr>
-      <form action="/feed" method="post">
-        <button type="submit">Feed!</button>
-      </form>
       <form action="/pets" method="post">
         <label for="petName">Pet's name:</label>
         <input id="petName" name="petname" type="text">
