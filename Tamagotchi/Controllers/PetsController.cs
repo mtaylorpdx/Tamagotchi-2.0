@@ -9,14 +9,14 @@ namespace Tamagotchi.Controllers
     [HttpPost("/pets")]
     public ActionResult Create(string petName)
     {
-      Place newPlace = new Place(petName);
+      Pet newPet = new Pet(petName);
       return RedirectToAction("Index");
     }
 
     [HttpGet("/pets")]
     public ActionResult Index()
     {
-      List<Place> petsList = Place.GetAll();
+      List<Pet> petsList = Pet.GetAll();
       return View(petsList);
     }
     
@@ -29,14 +29,14 @@ namespace Tamagotchi.Controllers
     [HttpGet("/pets/{id}")]
     public ActionResult Show(int id)
     {
-      Place foundPlace = Place.Find(id);
-      return View(foundPlace);
+      Pet foundPet = Pet.Find(id);
+      return View(foundPet);
     }
 
     [HttpPost("/pets/delete")]
     public ActionResult DeleteAll()
     {
-      Place.ClearAll();
+      Pet.ClearAll();
       return View();
     }
   }
