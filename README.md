@@ -6,11 +6,11 @@
 
 ## Description
 
-_A Tamagotchi style game application where a user creates pets to maintain._
+_A Tamagotchi style game application where a user creates pets to maintain across three stats - food, rest, attention._
 
 ## Bugs
 
-Minimally functioning, missing many features.
+No conditionals for falling below 0 in a stat. 
 
 ## Setup/Installation Requirements
 
