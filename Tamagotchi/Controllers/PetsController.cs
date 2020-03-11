@@ -17,11 +17,11 @@ namespace Tamagotchi.Controllers
     public ActionResult Index()
     {
       List<Pet> petsList = Pet.GetAll();
-      // Pet.PassTime(petsList);
-      foreach(Pet pet in petsList)
-      {
-        pet.Food -= 1;
-      }
+      Pet.PassTime();
+      // foreach(Pet pet in petsList)
+      // {
+      //   pet.Food -= 1;
+      // }
       return View(petsList);
     }
     
