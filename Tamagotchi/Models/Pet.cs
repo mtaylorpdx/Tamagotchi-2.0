@@ -13,7 +13,7 @@ namespace Tamagotchi.Models
 
     public Pet(string name)
     {
-      Name = name;
+      Name = name.ToUpper();
       _instances.Add(this);
       Id = _instances.Count;
     }
@@ -32,5 +32,10 @@ namespace Tamagotchi.Models
     {
       return _instances[searchId-1];
     }
+
+    // public static Pet PassTime(Pet petList)
+    // {
+
+    // }
   }
 }
