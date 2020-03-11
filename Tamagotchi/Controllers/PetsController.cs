@@ -17,11 +17,6 @@ namespace Tamagotchi.Controllers
     public ActionResult Index()
     {
       List<Pet> petsList = Pet.GetAll();
-      Pet.PassTime();
-      // foreach(Pet pet in petsList)
-      // {
-      //   pet.Food -= 1;
-      // }
       return View(petsList);
     }
     
@@ -43,6 +38,17 @@ namespace Tamagotchi.Controllers
     {
       Pet.ClearAll();
       return View();
+    }
+
+    [HttpPost("/feed")]
+    public ActionResult PassTime()
+    {
+      List<Pet> petsList = Pet.GetAll();
+      foreach(Pet pet in petsList)
+      {
+        pet.Food -= 1;
+      }
+    return RedirectToAction("Index");
     }
   }
 }

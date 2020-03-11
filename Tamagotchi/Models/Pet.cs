@@ -32,13 +32,5 @@ namespace Tamagotchi.Models
     {
       return _instances[searchId-1];
     }
-
-    public static void PassTime(List<Pet> petsList)
-    {
-    foreach(Pet pet in petsList)
-      {
-        pet.Food -= 1;
-      }
-    }
   }
 }
