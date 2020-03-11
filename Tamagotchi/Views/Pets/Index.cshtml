@@ -14,7 +14,13 @@
       {
         <p>@pet.Name - Food: @pet.Food - Attention: @pet.Attention - Rest: @pet.Rest</p>
         <form action="/feed/@pet.Id" method="post">
-          <button type="submit">Feed!</button>
+          <button type="submit">Feed</button>
+        </form>
+        <form action="/play/@pet.Id" method="post">
+          <button type="submit">Play</button>
+        </form>
+        <form action="/sleep/@pet.Id" method="post">
+          <button type="submit">Sleep</button>
         </form>
         <hr>
       }

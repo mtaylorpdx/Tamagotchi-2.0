@@ -54,5 +54,35 @@ namespace Tamagotchi.Controllers
       }
     return RedirectToAction("Index");
     }
+
+    [HttpPost("/play/{id}")]
+    public ActionResult Play(int id)
+    {
+      Pet fedPet = Pet.Find(id);
+      fedPet.ChangeAttention(2);
+      List<Pet> petsList = Pet.GetAll();
+      foreach(Pet pet in petsList)
+      {
+        pet.ChangeFood(-1);
+        pet.ChangeAttention(-1);
+        pet.ChangeRest(-1);
+      }
+    return RedirectToAction("Index");
+    }
+
+    [HttpPost("/sleep/{id}")]
+    public ActionResult Sleep(int id)
+    {
+      Pet fedPet = Pet.Find(id);
+      fedPet.ChangeRest(2);
+      List<Pet> petsList = Pet.GetAll();
+      foreach(Pet pet in petsList)
+      {
+        pet.ChangeFood(-1);
+        pet.ChangeAttention(-1);
+        pet.ChangeRest(-1);
+      }
+    return RedirectToAction("Index");
+    }
   }
 }
