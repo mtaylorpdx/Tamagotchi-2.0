@@ -5,9 +5,9 @@ namespace Tamagotchi.Models
   public class Pet
   {
     public string Name {get;set;}
-    public string Food {get;set;} = 10;
-    public string Attention {get;set;} = 10;
-    public string Rest {get;set;} = 10;
+    public int Food {get;set;} = 10;
+    public int Attention {get;set;} = 10;
+    public int Rest {get;set;} = 10;
     public int Id {get;}
     private static List<Pet> _instances = new List<Pet> {};
 
@@ -27,7 +27,7 @@ namespace Tamagotchi.Models
     {
       _instances.Clear();
     }
-    
+
     public static Pet Find(int searchId)
     {
       return _instances[searchId-1];
